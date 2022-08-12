@@ -4,7 +4,7 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <h2>Food Order React App</h2>
+  <h2>Quote React Router App</h2>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -24,11 +24,12 @@
 
 ## Overview
 
-### This is my second completed react project. Food ordering app utilizing all react feature during learning process.
+### This is my Third react project. storing/adding quotes app utilizing all react feature during learning process upon using react-router.
 
 ## Stack
 
 - React.js
+- React-Router lib
 
 ---
 
