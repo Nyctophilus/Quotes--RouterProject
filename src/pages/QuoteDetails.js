@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import NoQuotesFound from "../components/quotes/NoQuotesFound";
 
@@ -26,6 +26,12 @@ const QuoteDetails = () => {
   return (
     <>
       <HighlightedQuote {...currQuote} />
+
+      <div className="centered">
+        <Link to="comments" className="btn--flat">
+          Load Comments
+        </Link>
+      </div>
 
       <Outlet />
     </>
