@@ -67,6 +67,6 @@ This project require some prequesites and dependenscies to be installed, you can
 
 ## Preview
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7ac2604a-4ce9-4826-8709-a36e46355e1e/deploy-status)](mfayad-react-quotes-router-project.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7ac2604a-4ce9-4826-8709-a36e46355e1e/deploy-status)](https://mfayad-react-quotes-router-project.netlify.app)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
