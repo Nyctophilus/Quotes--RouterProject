@@ -1,31 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
-import NoQuotesFound from "../components/quotes/NoQuotesFound";
-
-const DUMMY_QUOTES = [
-  {
-    id: "q1",
-    author: "Medo",
-    text: "Learning React is fun!",
-  },
-  {
-    id: "q2",
-    author: "Muhammed",
-    text: "Love And Thunder",
-  },
-];
+import LoadingSpinner from "../components/UI/LoadingSpinner";
+import useHttp from "../hooks/use-http";
+import { getSingleQuote } from "../lib/api";
 
 const QuoteDetails = () => {
   const { id } = useParams();
 
-  const currQuote = DUMMY_QUOTES.find((q) => q.id === id);
+  const {
+    sendRequest,
+    status,
+    data: loadedQuote,
+    error,
+  } = useHttp(getSingleQuote, true);
 
-  if (!currQuote) return <NoQuotesFound />;
+  useEffect(() => {
+    sendRequest(id);
+  }, [sendRequest, id]);
+
+  if (status === "pending")
+    return (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    );
+
+  if (error) return <p className="centered">{error}</p>;
+
+  if (!loadedQuote.text)
+    return <p className="centered">No Quote Found!</p>;
+
+  console.log(loadedQuote);
 
   return (
     <>
-      <HighlightedQuote {...currQuote} />
+      <HighlightedQuote {...loadedQuote} />
 
       <div className="centered">
         <Link to="comments" className="btn--flat">
