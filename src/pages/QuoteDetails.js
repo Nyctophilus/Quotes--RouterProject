@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 import useHttp from "../hooks/use-http";
@@ -36,12 +36,6 @@ const QuoteDetails = () => {
   return (
     <>
       <HighlightedQuote {...loadedQuote} />
-
-      <div className="centered">
-        <Link to="comments" className="btn--flat">
-          Load Comments
-        </Link>
-      </div>
 
       <Outlet />
     </>
